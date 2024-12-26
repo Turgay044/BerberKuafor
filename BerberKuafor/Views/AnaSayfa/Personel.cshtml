@@ -1,0 +1,24 @@
+﻿@model List<BerberKuafor.Models.Personel>
+@{
+    ViewData["Title"] = "Personel";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<body>
+
+
+    <h4>Personel Sayfası</h4>
+    <br />
+    <br />
+    <table>
+    @foreach(var a in Model)
+    {
+        <tr>
+            <td>@a.IDPersonel</td>
+            <td>@a.PersonelAdi</td>
+            <td>@a.PersonelSoyad</td>
+            <br />
+        </tr>
+    }
+    </table>
+
+</body>

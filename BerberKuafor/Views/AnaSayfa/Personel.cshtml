@@ -3,22 +3,31 @@
     ViewData["Title"] = "Personel";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
+
+<section class="ftco-section ftco-booking bg-light">
+    <div class="container ftco-relative">
+        <div class="row justify-content-center pb-3">
+            <div class="col-md-10 heading-section text-center ftco-animate">
+                </div>
+            </div>
+        </div>
+</section>
+
 <body>
-
-
-    <h4>Personel Sayfası</h4>
-    <br />
-    <br />
-    <table>
+    <table class ="table table-bordered">
+        <tr>
+            <th>Sıra</th>
+            <th>Personel Adı</th>
+            <th>Personel Soyadı</th>
+        </tr>
     @foreach(var a in Model)
     {
         <tr>
             <td>@a.IDPersonel</td>
             <td>@a.PersonelAdi</td>
             <td>@a.PersonelSoyad</td>
-            <br />
         </tr>
     }
     </table>
-
+    <button class="btn btn-warning">Personel Listesi</button>
 </body>

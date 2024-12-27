@@ -6,7 +6,7 @@ namespace BerberKuafor.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-LQKJ0N7; database=BerberDB; integrated security = true;");
+            optionsBuilder.UseSqlServer("server=.\\MSSQL; database=BerberDB; integrated security = true;MultipleActiveResultSets=true;TrustServerCertificate=True;");
         }
         public DbSet<Personel> Personels { get; set; }
     }

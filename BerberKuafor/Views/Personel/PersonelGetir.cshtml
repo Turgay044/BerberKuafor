@@ -1,0 +1,20 @@
+﻿@model BerberKuafor.Models.Personel
+@{
+    ViewData["Title"] = "PersonelGetir";
+    Layout = "~/Views/AnaSayfa/PersoneLayout.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGuncelle", "prsl", FormMethod.Post))
+{
+    <b>@Html.LabelFor(x => x.IDPersonel, "Sıra Numarası")</b>
+    @Html.TextBoxFor(x => x.IDPersonel, new { @class = "form-control" })
+    <br />
+    <b>@Html.LabelFor(x => x.PersonelAdi, "Personel Adı")</b>
+    @Html.TextBoxFor(x => x.PersonelAdi, new { @class = "form-control" })
+    <br />
+    <b>@Html.LabelFor(x => x.PersonelSoyad, "Personel Soyadı")</b>
+    @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Personel Güncelle</button>
+}
+

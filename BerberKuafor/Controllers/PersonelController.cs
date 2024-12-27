@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BerberKuafor.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BerberKuafor.Controllers
 {
@@ -24,6 +25,19 @@ namespace BerberKuafor.Controllers
             c.Personels.Add(P);
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public IActionResult PersonelSil(int ID)
+        {
+            var Rem = c.Personels.Find(ID);
+            c.Personels.Remove(Rem);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+        public IActionResult PersonelGetir(int id)
+        {
+            var prsl = c.Personels.Find(id);
+            return View("PersonelGetir", prsl);
         }
     }
 }

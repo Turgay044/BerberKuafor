@@ -39,5 +39,20 @@ namespace BerberKuafor.Controllers
             var prsl = c.Personels.Find(id);
             return View("PersonelGetir", prsl);
         }
+
+        public IActionResult PersonelGuncelle()
+        {
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost("update")]
+        public IActionResult PersonelGuncelle(Personel p)
+        {
+            var pers = c.Personels.Find(p.IDPersonel);
+            pers.PersonelAdi = p.PersonelAdi;
+            pers.PersonelSoyad = p.PersonelSoyad;
+            c.SaveChanges();
+            return RedirectToAction("Index");   
+        }
     }
 }

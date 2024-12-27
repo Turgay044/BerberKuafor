@@ -4,7 +4,7 @@
     Layout = "~/Views/AnaSayfa/PersoneLayout.cshtml";
 }
 
-@using (Html.BeginForm("PersonelGuncelle", "prsl", FormMethod.Post))
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
 {
     <b>@Html.LabelFor(x => x.IDPersonel, "Sıra Numarası")</b>
     @Html.TextBoxFor(x => x.IDPersonel, new { @class = "form-control" })

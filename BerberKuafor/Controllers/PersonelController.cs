@@ -12,5 +12,18 @@ namespace BerberKuafor.Controllers
 
             return View(degerler);
         }
+
+        [HttpGet]
+        public IActionResult YeniPersonel()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult YeniPersonel(Personel P)
+        {
+            c.Personels.Add(P);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

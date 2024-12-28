@@ -1,4 +1,5 @@
-﻿@model BerberKuafor.Models.Admin
+﻿@using BerberKuafor.Models
+
 @{
     ViewData["Title"] = "GirisYap";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -20,12 +21,12 @@
 						
 						<div class="col-sm-6">
 							<div class="form-group">
-								<input type="email" name="KullaniciMail" class="form-control">
+								<input type="email" name="KullaniciMail" class="form-control" required="">
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
-								<input type="password" name="Sifre" class="form-control">
+								<input type="password" name="Sifre" class="form-control" required="">
 							</div>
 						</div>
 						</div>

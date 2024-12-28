@@ -10,5 +10,6 @@ namespace BerberKuafor.Models
         }
         public DbSet<Personel> Personels { get; set; }
         public DbSet<Musteri> Musteriler {  get; set; }   
+        public DbSet<Admin> Admins { get; set; }    
     }
 }

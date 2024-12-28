@@ -2,14 +2,14 @@
 
 namespace BerberKuafor.Models
 {
-    public class Context:DbContext
+    public class Context : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=.\\MSSQL; database=BerberDB; integrated security = true;MultipleActiveResultSets=true;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("server=.//MSSQL; database=BerberDB; integrated security = true;MultipleActiveResultSets=true;TrustServerCertificate=True;");
         }
         public DbSet<Personel> Personels { get; set; }
-        public DbSet<Musteri> Musteriler {  get; set; }   
-        public DbSet<Admin> Admins { get; set; }    
+        public DbSet<Musteri> Musteriler { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }

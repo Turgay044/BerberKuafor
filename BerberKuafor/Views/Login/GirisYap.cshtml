@@ -1,42 +1,44 @@
-﻿@using BerberKuafor.Models
-
+﻿@model BerberKuafor.Models.Admin
 @{
     ViewData["Title"] = "GirisYap";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
 <section class="ftco-section ftco-booking bg-light">
-	<div class="container ftco-relative">
-		<div class="row justify-content-center pb-3">
-			<div class="col-md-10 heading-section text-center ftco-animate">
-				<h2 class="mb-4">Giriş İşlemleri</h2>
-				<p>Lütfen giriş epostanız ile şifrenizi giriniz</p>
-			</div>
-		</div>
-		<h3 class="vr">Telefon: 0212-3456-7890</h3>
-		<div class="row justify-content-center">
-			<div class="col-md-10 ftco-animate">
-				<form action="#" class="appointment-form">
-					<div class="row">
-						
-						<div class="col-sm-6">
-							<div class="form-group">
-								<input type="email" name="KullaniciMail" class="form-control" required="">
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="form-group">
-								<input type="password" name="Sifre" class="form-control" required="">
-							</div>
-						</div>
-						</div>
-					<div class="form-group">
-						<input type="submit" value="Giriş" class="btn btn-primary">
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+    <div class="container ftco-relative">
+        <div class="row justify-content-center pb-3">
+            <div class="col-md-10 heading-section text-center ftco-animate">
+                <h2 class="mb-4">Giriş İşlemleri</h2>
+                <p>Lütfen giriş e-postanızı ve şifrenizi giriniz.</p>
+            </div>
+        </div>
+        <h3 class="vr">Telefon: 0212-3456-7890</h3>
+        <div class="row justify-content-center">
+            <div class="col-md-10 ftco-animate">
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="alert alert-danger">
+                        @Html.ValidationSummary()
+                    </div>
+                }
+                <form asp-action="GirisYap" asp-controller="Login" method="post" class="appointment-form">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="email" asp-for="KullaniciMail" class="form-control" placeholder="E-posta" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="password" asp-for="Sifre" class="form-control" placeholder="Şifre" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Giriş" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </section>
-
-

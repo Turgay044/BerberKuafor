@@ -12,7 +12,6 @@ namespace BerberKuafor.Controllers
         public IActionResult Index()
         {
             var degerler = c.Personels.ToList();
-
             return View(degerler);
         }
 

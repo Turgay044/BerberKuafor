@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BerberKuafor.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BerberKuafor.Controllers
 {
     public class PersonelController : Controller
     {
         Context c = new Context();
+        [Authorize]
         public IActionResult Index()
         {
             var degerler = c.Personels.ToList();

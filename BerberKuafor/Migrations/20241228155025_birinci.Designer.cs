@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BerberKuafor.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20241228091221_ucuncu")]
-    partial class ucuncu
+    [Migration("20241228155025_birinci")]
+    partial class birinci
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,6 +35,10 @@ namespace BerberKuafor.Migrations
                     b.Property<string>("Kullanici")
                         .IsRequired()
                         .HasColumnType("Varchar(20)");
+
+                    b.Property<string>("KullaniciMail")
+                        .IsRequired()
+                        .HasColumnType("Varchar(50)");
 
                     b.Property<string>("Sifre")
                         .IsRequired()

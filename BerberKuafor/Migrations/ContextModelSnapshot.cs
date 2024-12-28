@@ -29,6 +29,11 @@ namespace BerberKuafor.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminId"));
 
+                    b.Property<string>("AdminRole")
+                        .IsRequired()
+                        .HasMaxLength(1)
+                        .HasColumnType("nvarchar(1)");
+
                     b.Property<string>("Kullanici")
                         .IsRequired()
                         .HasColumnType("Varchar(20)");

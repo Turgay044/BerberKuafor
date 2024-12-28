@@ -1,5 +1,6 @@
 ﻿using BerberKuafor.Models;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Mail;
 using System.Security.Claims;
@@ -35,5 +36,13 @@ namespace BerberKuafor.Controllers
             ModelState.AddModelError("", "Geçersiz e-posta veya şifre.");
             return View();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> LogOut()
+        { 
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index","Login");
+        }
+
     }
 }

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BerberKuafor.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20241228081001_ikinci")]
+    [Migration("20241228161226_ikinci")]
     partial class ikinci
     {
         /// <inheritdoc />
@@ -23,6 +23,36 @@ namespace BerberKuafor.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("BerberKuafor.Models.Admin", b =>
+                {
+                    b.Property<int>("AdminId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminId"));
+
+                    b.Property<string>("AdminRole")
+                        .IsRequired()
+                        .HasMaxLength(1)
+                        .HasColumnType("nvarchar(1)");
+
+                    b.Property<string>("Kullanici")
+                        .IsRequired()
+                        .HasColumnType("Varchar(20)");
+
+                    b.Property<string>("KullaniciMail")
+                        .IsRequired()
+                        .HasColumnType("Varchar(50)");
+
+                    b.Property<string>("Sifre")
+                        .IsRequired()
+                        .HasColumnType("Varchar(20)");
+
+                    b.HasKey("AdminId");
+
+                    b.ToTable("Admins");
+                });
 
             modelBuilder.Entity("BerberKuafor.Models.Musteri", b =>
                 {

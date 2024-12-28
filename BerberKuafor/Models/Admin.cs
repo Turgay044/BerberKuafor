@@ -13,6 +13,8 @@ namespace BerberKuafor.Models
         public string KullaniciMail { get; set; }
         [Column(TypeName = "Varchar(20)")]
         public string Sifre { get; set; }
+        [StringLength(1)]
+        public string AdminRole {  get; set; }
 
     }
 }

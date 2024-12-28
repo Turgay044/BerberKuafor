@@ -7,8 +7,25 @@
 <html>
 <head>
     <title>Fotoğraf Yükle</title>
+    <style>
+        /* Navbar yüksekliğine göre üst boşluk bırak */
+        body {
+            margin-top: 70px; /* Navbar yüksekliği kadar boşluk */
+        }
+
+        .navbar {
+            position: fixed; /* Eğer navbar sabitse bu stil uygulanmalı */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
+    <nav class="navbar">
+        <!-- Navbar içeriği burada -->
+    </nav>
+
     <h1>Fotoğraf Yükle ve Saç Stili Önerisi Al</h1>
 
     <form asp-action="UploadPhoto" method="post" enctype="multipart/form-data">
@@ -37,4 +54,3 @@
     }
 </body>
 </html>
-

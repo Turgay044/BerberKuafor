@@ -8,22 +8,25 @@
 
 <table class="table table-bordered">
     <tr>
-        <th>ID</th>
-        <th>Adı</th>
+        <th>Sıra</th>
+        <th>Adı</th>       
         <th>Soyadı</th>
+        <th>E-Posta</th>
         <th>Güncelle</th>
         <th>Sil</th>
     </tr>
     @foreach (var x in Model)
     {
         <tr>
-            <td>@x.IDPersonel</td>
-            <td>@x.PersonelAdi</td>
-            <td>@x.PersonelSoyad</td>
-            <td><a href="/Personel/PersonelGetir/@x.IDPersonel" class="btn btn-success">Güncelle</a></td>
-            <td><a href="/Personel/PersonelSil/@x.IDPersonel" class="btn btn-danger">Sil</a></td>
+            <td>@x.IdMusteri</td>
+            <td>@x.MusteriAdi</td>
+            <td>@x.MusteriSoyadi</td>
+            <td>@x.MusteriMail</td>
+            <td><a href="/Musteri/MusteriGetir/@x.IdMusteri" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Personel/PersonelSil/@x.IdMusteri" class="btn btn-danger">Sil</a></td>
         </tr>
     }
+
 </table>
-<a href="/Personel/YeniPersonel" class="btn btn-primary">Yeni Personel</a>
+<a href="/Musteri/YeniMusteri" class="btn btn-primary">Yeni Müşteri</a>
 

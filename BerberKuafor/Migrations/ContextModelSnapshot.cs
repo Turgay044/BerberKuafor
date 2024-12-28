@@ -41,14 +41,9 @@ namespace BerberKuafor.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("personIDPersonel")
-                        .HasColumnType("int");
-
                     b.HasKey("IdMusteri");
 
-                    b.HasIndex("personIDPersonel");
-
-                    b.ToTable("Musteri");
+                    b.ToTable("Musteriler");
                 });
 
             modelBuilder.Entity("BerberKuafor.Models.Personel", b =>
@@ -70,22 +65,6 @@ namespace BerberKuafor.Migrations
                     b.HasKey("IDPersonel");
 
                     b.ToTable("Personels");
-                });
-
-            modelBuilder.Entity("BerberKuafor.Models.Musteri", b =>
-                {
-                    b.HasOne("BerberKuafor.Models.Personel", "person")
-                        .WithMany("Musteriler")
-                        .HasForeignKey("personIDPersonel")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("person");
-                });
-
-            modelBuilder.Entity("BerberKuafor.Models.Personel", b =>
-                {
-                    b.Navigation("Musteriler");
                 });
 #pragma warning restore 612, 618
         }

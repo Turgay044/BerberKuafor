@@ -1,0 +1,19 @@
+﻿@model BerberKuafor.Models.Musteri
+@{
+    ViewData["Title"] = "YeniMusteri";
+    Layout = "~/Views/AnaSayfa/PersoneLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <b>@Html.LabelFor(x => x.MusteriAdi, "Müşteri Adı")</b>
+    @Html.TextBoxFor(x => x.MusteriAdi, new { @class = "form-control" })
+    <br />
+    <b>@Html.LabelFor(x => x.MusteriSoyadi, "Müşteri Soyadı")</b>
+    @Html.TextBoxFor(x => x.MusteriSoyadi, new { @class = "form-control" })
+    <br />
+    <b>@Html.LabelFor(x => x.MusteriMail, "Müşteri E-Posta")</b>
+    @Html.TextBoxFor(x => x.MusteriMail, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Müşteri Ekle</button>
+</form>
+

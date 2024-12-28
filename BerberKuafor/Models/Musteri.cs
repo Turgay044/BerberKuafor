@@ -10,6 +10,6 @@ namespace BerberKuafor.Models
         public string MusteriSoyadi { get; set; }
         public string MusteriMail { get; set; }
 
-        public Personel person { get; set; }
+        //public Personel person { get; set; }
     }
 }

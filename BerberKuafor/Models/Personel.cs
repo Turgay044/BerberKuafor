@@ -9,6 +9,6 @@ namespace BerberKuafor.Models
         public string PersonelAdi { get; set; }
         public string PersonelSoyad { get; set; }
 
-        public List<Musteri> Musteriler { get; set; }
+        //public List<Musteri> Musteriler { get; set; }
     }
 }

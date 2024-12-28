@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "AI Fotoğraf Yükleme";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fotoğraf Yükle</title>
+</head>
+<body>
+    <h1>Fotoğraf Yükle ve Saç Stili Önerisi Al</h1>
+
+    <form asp-action="UploadPhoto" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="file">Fotoğraf Yükle:</label>
+            <input type="file" id="file" name="file" />
+        </div>
+        <button type="submit">Yükle</button>
+    </form>
+
+    @if (ViewBag.SuggestedPhotoUrl != null)
+    {
+        <div>
+            <h2>Önerilen Saç Stili:</h2>
+            <img src="@ViewBag.SuggestedPhotoUrl" alt="Önerilen Saç Stili" />
+            <p>Detaylar: @ViewBag.RecommendationDetails</p>
+        </div>
+    }
+    else if (!string.IsNullOrEmpty(ViewData["Error"]?.ToString()))
+    {
+        <p style="color:red;">@ViewData["Error"]</p>
+    }
+    else
+    {
+        <p>Sonuç bulunamadı. Lütfen tekrar deneyin.</p>
+    }
+</body>
+</html>
+
